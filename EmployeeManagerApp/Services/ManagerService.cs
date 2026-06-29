@@ -74,6 +74,7 @@ namespace EmployeeManagerApp.Services
             }
 
             leaveRequest.Status = "Rejected";
+            Console.WriteLine($"DTO Comment: '{dto.ManagerComment}'");
             leaveRequest.ManagerComment = dto.ManagerComment;
 
             leaveRequest.Employee.LeaveBalance--;

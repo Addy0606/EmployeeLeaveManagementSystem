@@ -64,7 +64,8 @@ namespace EmployeeManagerApp.Services
                 LeaveType = l.LeaveType!.LeaveName,
                 StartDate = l.StartDate,
                 EndDate = l.EndDate,
-                Status = l.Status
+                Status = l.Status,
+                ManagerComment=l.ManagerComment
             }).ToList();
 
         }

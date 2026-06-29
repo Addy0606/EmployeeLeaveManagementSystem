@@ -18,13 +18,7 @@ export class AuthService {
       request
     );
   }
-  getProfile(): Observable<any> {
-
-  return this.http.get(
-    `${environment.apiUrl}/employee/profile`
-  );
-
-}
+  
   saveAuthData(response: any): void {
     localStorage.setItem('token', response.token);
     localStorage.setItem('role', response.role);

@@ -1,1 +1,65 @@
-<h1>Employee Dashboard</h1>
+@if (employee) {
+
+<div class="container mt-5">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+            <h3>Employee Dashboard</h3>
+        </div>
+
+        <div class="card-body">
+
+            <h4>Welcome, {{ employee.name }}</h4>
+
+            <hr>
+
+            <p>
+                <strong>Employee ID:</strong>
+                {{ employee.employeeId }}
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                {{ employee.email }}
+            </p>
+
+            <p>
+                <strong>Department:</strong>
+                {{ employee.department }}
+            </p>
+
+            <p>
+                <strong>Leave Balance:</strong>
+                {{ employee.leaveBalance }}
+            </p>
+
+        </div>
+
+    </div>
+</div>
+<div class="mt-3">
+
+    <a
+        routerLink="/apply-leave"
+        class="btn btn-success me-2">
+
+        Apply Leave
+
+    </a>
+
+    <a
+        routerLink="/leave-history"
+        class="btn btn-primary">
+
+        Leave History
+
+    </a>
+
+</div>
+
+} @else {
+
+<p>Employee is null</p>
+
+}

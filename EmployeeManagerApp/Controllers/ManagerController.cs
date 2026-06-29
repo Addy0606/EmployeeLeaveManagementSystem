@@ -23,7 +23,7 @@ namespace EmployeeManagerApp.Controllers
             return Ok(pendingRequests);
         }
         [HttpPut("approve/{id}")]
-        public async Task<IActionResult> ApproveLeaveAsync(int id, UpdateLeaveStatusDto dto)
+        public async Task<IActionResult> ApproveLeaveAsync(int id, [FromBody] UpdateLeaveStatusDto dto)
         {
             await _service.ApproveLeaveAsync(id, dto);
 
@@ -36,7 +36,7 @@ namespace EmployeeManagerApp.Controllers
             return Ok(report);
         }
         [HttpPut("reject/{id}")]
-        public async Task<IActionResult> RejectLeaveAsync(int id, UpdateLeaveStatusDto dto)
+        public async Task<IActionResult> RejectLeaveAsync(int id, [FromBody] UpdateLeaveStatusDto dto)
         {
             await _service.RejectLeaveAsync(id, dto);
 

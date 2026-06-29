@@ -46,7 +46,10 @@ namespace EmployeeManagerApp.Controllers
         {
             var employeeId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
             await _service.ApplyLeaveAsync(employeeId, request);
-            return Ok("Leave request submitted.");
+            return Ok(new
+            {
+                message = "Leave request submitted successfully."
+            });
         }
         [HttpGet("leaves")]
         public async Task<IActionResult> GetLeaveHistory()
