@@ -1,11 +1,14 @@
 import { Routes } from '@angular/router';
-import { PendingRequestsComponent } from './components/pending-requests/pending-requests';
+
 import { Login } from './components/login/login';
 import { EmployeeDashboard } from './components/employee-dashboard/employee-dashboard';
 import { ManagerDashboard } from './components/manager-dashboard/manager-dashboard';
-import { ApplyLeaveComponent } from './components/apply-leave/apply-leave';
-import { authGuard } from './guards/auth-guard';
 import { LeaveHistoryComponent } from './components/leave-history/leave-history';
+import { ApplyLeaveComponent } from './components/apply-leave/apply-leave';
+import { PendingRequestsComponent } from './components/pending-requests/pending-requests';
+
+import { employeeGuard } from './guards/employee-guard';
+import { managerGuard } from './guards/manager-guard';
 
 export const routes: Routes = [
 
@@ -14,32 +17,36 @@ export const routes: Routes = [
     component: Login
   },
 
+  // Employee Routes
   {
     path: 'employee-dashboard',
     component: EmployeeDashboard,
-    canActivate: [authGuard]
+    canActivate: [employeeGuard]
   },
 
-  {
-    path: 'manager-dashboard',
-    component: ManagerDashboard,
-    canActivate: [authGuard]
-  },
   {
     path: 'leave-history',
     component: LeaveHistoryComponent,
-    canActivate: [authGuard]
+    canActivate: [employeeGuard]
   },
-  
 
-{
+  {
     path: 'apply-leave',
     component: ApplyLeaveComponent,
-    canActivate: [authGuard]
-},
-{
+    canActivate: [employeeGuard]
+  },
+
+  // Manager Routes
+  {
+    path: 'manager-dashboard',
+    component: ManagerDashboard,
+    canActivate: [managerGuard]
+  },
+
+  {
     path: 'pending-requests',
     component: PendingRequestsComponent,
-    canActivate: [authGuard]
-}
+    canActivate: [managerGuard]
+  }
+
 ];
