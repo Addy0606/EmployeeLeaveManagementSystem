@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-
+import { PendingRequestsComponent } from './components/pending-requests/pending-requests';
 import { Login } from './components/login/login';
 import { EmployeeDashboard } from './components/employee-dashboard/employee-dashboard';
 import { ManagerDashboard } from './components/manager-dashboard/manager-dashboard';
@@ -35,6 +35,11 @@ export const routes: Routes = [
 {
     path: 'apply-leave',
     component: ApplyLeaveComponent,
+    canActivate: [authGuard]
+},
+{
+    path: 'pending-requests',
+    component: PendingRequestsComponent,
     canActivate: [authGuard]
 }
 ];
