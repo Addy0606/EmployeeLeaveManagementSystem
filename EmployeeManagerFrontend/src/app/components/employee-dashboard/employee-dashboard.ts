@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { EmployeeService } from '../../services/employee';
 import { EmployeeProfile } from '../../models/employee-profile';
+import { EmployeeNavbarComponent } from '../employee-navbar/employee-navbar';
 
 @Component({
   selector: 'app-employee-dashboard',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink,EmployeeNavbarComponent],
   templateUrl: './employee-dashboard.html',
   styleUrl: './employee-dashboard.css'
 })

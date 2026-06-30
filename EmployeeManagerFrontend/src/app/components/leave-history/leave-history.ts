@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { EmployeeService } from '../../services/employee';
 import { LeaveHistory } from '../../models/leave-history';
+import { EmployeeNavbarComponent } from '../employee-navbar/employee-navbar';
 
 @Component({
   selector: 'app-leave-history',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,EmployeeNavbarComponent],
   templateUrl: './leave-history.html',
   styleUrl: './leave-history.css'
 })

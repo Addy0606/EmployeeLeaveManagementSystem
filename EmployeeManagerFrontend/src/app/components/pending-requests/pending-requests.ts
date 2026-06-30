@@ -6,11 +6,12 @@ import { ManagerService } from '../../services/manager';
 
 import { PendingRequest } from '../../models/pending-request';
 import { UpdateLeaveStatus } from '../../models/update-leave-status';
+import { ManagerNavbarComponent } from '../manager-navbar/manager-navbar';
 
 @Component({
   selector: 'app-pending-requests',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ManagerNavbarComponent],
   templateUrl: './pending-requests.html',
   styleUrl: './pending-requests.css'
 })

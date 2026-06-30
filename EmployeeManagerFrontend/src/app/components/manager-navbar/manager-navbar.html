@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <div class="container-fluid">
+
+        <a class="navbar-brand">
+            Leave Management
+        </a>
+
+        <div class="navbar-nav">
+
+            <a
+                routerLink="/manager-dashboard"
+                routerLinkActive="active"
+                class="nav-link">
+
+                Dashboard
+
+            </a>
+
+            <a
+                routerLink="/pending-requests"
+                routerLinkActive="active"
+                class="nav-link">
+
+                Pending Requests
+
+            </a>
+
+        </div>
+
+        <button
+             class="btn btn-danger ms-auto"
+            (click)="logout()">
+
+            Logout
+
+        </button>
+
+    </div>
+
+</nav>

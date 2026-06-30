@@ -4,11 +4,12 @@ import { RouterLink } from '@angular/router';
 
 import { ManagerService } from '../../services/manager';
 import { ManagerReport } from '../../models/manager-report';
+import { ManagerNavbarComponent } from "../manager-navbar/manager-navbar";
 
 @Component({
   selector: 'app-manager-dashboard',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, ManagerNavbarComponent],
   templateUrl: './manager-dashboard.html',
   styleUrl: './manager-dashboard.css'
 })

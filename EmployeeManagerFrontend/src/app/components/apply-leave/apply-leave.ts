@@ -4,11 +4,12 @@ import { Router } from '@angular/router';
 
 import { EmployeeService } from '../../services/employee';
 import { ApplyLeave } from '../../models/apply-leave';
+import { EmployeeNavbarComponent } from '../employee-navbar/employee-navbar';
 
 @Component({
   selector: 'app-apply-leave',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,EmployeeNavbarComponent],
   templateUrl: './apply-leave.html',
   styleUrl: './apply-leave.css'
 })

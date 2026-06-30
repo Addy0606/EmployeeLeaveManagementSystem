@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <div class="container-fluid">
+
+    <a class="navbar-brand">
+      Employee Leave System
+    </a>
+
+    <div class="navbar-nav">
+
+      <a
+        routerLink="/employee-dashboard"
+        class="nav-link" routerLinkActive="active">
+        
+        Dashboard
+
+      </a>
+
+      <a
+        routerLink="/apply-leave"
+        class="nav-link" routerLinkActive="active">
+
+        Apply Leave
+
+      </a>
+
+      <a
+        routerLink="/leave-history"
+        class="nav-link" routerLinkActive="active">
+
+        Leave History
+
+      </a>
+
+    </div>
+
+    <button
+      class="btn btn-danger ms-auto"
+      (click)="logout()">
+
+      Logout
+
+    </button>
+
+  </div>
+
+</nav>

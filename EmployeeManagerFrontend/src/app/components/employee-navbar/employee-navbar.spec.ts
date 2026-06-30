@@ -1,21 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LeaveHistoryComponent
+import { EmployeeNavbar } from './employee-navbar';
 
-
-
- } from './leave-history';
-
-describe('LeaveHistoryComponent', () => {
-  let component: LeaveHistoryComponent;
-  let fixture: ComponentFixture<LeaveHistoryComponent>;
+describe('EmployeeNavbar', () => {
+  let component: EmployeeNavbar;
+  let fixture: ComponentFixture<EmployeeNavbar>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LeaveHistoryComponent],
+      imports: [EmployeeNavbar],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(LeaveHistoryComponent);
+    fixture = TestBed.createComponent(EmployeeNavbar);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
