@@ -51,5 +51,58 @@ export class PendingRequestsComponent implements OnInit {
     });
 
   }
+  approve(request: PendingRequest): void {
+
+  this.managerService.approveLeave(
+    request.leaveRequestId,
+    {
+      managerComment: request.managerComment
+    }
+  ).subscribe({
+
+    next: () => {
+
+      alert("Leave approved.");
+
+      this.loadRequests();
+
+    },
+
+    error: (err: any) => {
+
+      console.error(err);
+
+    }
+
+  });
+
+}
+
+reject(request: PendingRequest): void {
+
+  this.managerService.rejectLeave(
+    request.leaveRequestId,
+    {
+      managerComment: request.managerComment
+    }
+  ).subscribe({
+
+    next: () => {
+
+      alert("Leave rejected.");
+
+      this.loadRequests();
+
+    },
+
+    error: (err: any) => {
+
+      console.error(err);
+
+    }
+
+  });
+
+}
 
 }

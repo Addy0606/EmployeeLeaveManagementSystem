@@ -25,9 +25,9 @@ namespace EmployeeManagerApp.Controllers
         [HttpPut("approve/{id}")]
         public async Task<IActionResult> ApproveLeaveAsync(int id, [FromBody] UpdateLeaveStatusDto dto)
         {
-            await _service.ApproveLeaveAsync(id, dto);
+            await _service.ApproveLeaveAsync(id, dto);  
 
-            return Ok("Request approved successfully.");
+            return Ok(new { message="Request approved successfully." });
         }
         [HttpGet("summary")]
         public async Task<IActionResult> GetSummaryReportAsync()
@@ -40,7 +40,10 @@ namespace EmployeeManagerApp.Controllers
         {
             await _service.RejectLeaveAsync(id, dto);
 
-            return Ok("Request rejected successfully.");
+            return Ok(new
+            {
+                message = "Request rejected successfully."
+            });
         }
 
     }
